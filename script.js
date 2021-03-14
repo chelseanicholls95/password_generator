@@ -70,6 +70,7 @@ function generatePassword() {
     )
   ) {
   } else {
+    alert("Please choose at least one option.");
   }
 
   // Generate password
