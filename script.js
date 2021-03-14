@@ -120,9 +120,9 @@ function generatePassword() {
     "`",
   ];
 
-  numbersArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+  const numbersArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
-  optionsArray = [];
+  const optionsArray = [];
 
   // Prompt user to insert password length
 
@@ -183,24 +183,24 @@ function generatePassword() {
 
   // Add selected options to an array
   if (lowerCaseLetters) {
-    optionsArray.push("lowerCaseLetters");
+    optionsArray.push(lowerCaseArray);
   }
 
   if (upperCaseLetters) {
-    optionsArray.push("upperCaseLetters");
+    optionsArray.push(upperCaseArray);
   }
 
   if (specialCharacters) {
-    optionsArray.push("specialCharacters");
+    optionsArray.push(specialCharsArray);
   }
 
   if (numbers) {
-    optionsArray.push("numbers");
+    optionsArray.push(numbersArray);
   }
 
   // Generate password
 
-  // choose a random option from the options array
+  // Choose a random option from the options array
   const getRandomOption = function (optionsArray) {
     const length = optionsArray.length;
     const randomOption = Math.floor(Math.random() * length);
