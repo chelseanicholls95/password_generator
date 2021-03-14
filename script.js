@@ -27,7 +27,7 @@ function generatePassword() {
   // Validate password length
   if (isValidLength(passwordLengthInput)) {
   } else {
-    alert("Please enter a number between 8 and 128");
+    alert("Please enter a number between 8 and 128.");
     return;
   }
 
@@ -47,6 +47,16 @@ function generatePassword() {
   const numbers = confirm("Do you want to include numbers in the password?");
 
   // Validate that at least one of the above options have been selected
+  const isValidOption = function (lowercase, uppercase, special, numbers) {
+    if (lowercase || uppercase || special || numbers) {
+      console.log("true");
+    } else {
+      console.log("false");
+      alert("Please choose at least one option.");
+    }
+  };
+
+  isValidOption(lowerCaseLetters, upperCaseLetters, specialCharacters, numbers);
 
   // Generate password
 
