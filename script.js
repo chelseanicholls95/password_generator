@@ -130,6 +130,10 @@ function generatePassword() {
     "How many characters would you like the password to be?"
   );
 
+  // Convert string to a number
+
+  const passwordLength = parseInt(passwordLengthInput, 10);
+
   // Validate password length
 
   if (isValidLength(passwordLengthInput)) {
@@ -177,7 +181,7 @@ function generatePassword() {
     return;
   }
 
-  // Add selected options to an array 
+  // Add selected options to an array
   if (lowerCaseLetters) {
     optionsArray.push("lowerCaseLetters");
   }
@@ -192,6 +196,7 @@ function generatePassword() {
 
   if (numbers) {
     optionsArray.push("numbers");
+  }
 
   // Generate password
 
