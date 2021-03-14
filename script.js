@@ -9,5 +9,17 @@ function writePassword() {
   passwordText.value = password;
 }
 
+// Declare a new function on line 3
+function generatePassword() {
+	// Create a variable to store our generated password
+	var password = ''
+
+	// Logic would go here
+	...
+
+	// Return our created password
+	return password;
+}
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
