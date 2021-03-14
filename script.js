@@ -201,13 +201,38 @@ function generatePassword() {
   // Generate password
 
   // Choose a random option from the options array
-  const getRandomOption = function (optionsArray) {
-    const length = optionsArray.length;
+
+  const getRandomOption = function (array) {
+    // check length of array
+    const length = array.length;
+
+    // choose random index from the array
     const randomOption = Math.floor(Math.random() * length);
+
+    // return the index number
     return randomOption;
   };
 
-  getRandomOption(optionsArray);
+  // Choose a random character from the chosen option
+
+  const getRandomCharacter = function (array) {
+    // check length of array
+    const length = array.length;
+
+    // choose a random index from that array
+    const randomCharacter = Math.floor(Math.random() * length);
+
+    // access character of that index number
+    const character = array[randomCharacter];
+
+    // return the character
+    console.log(character);
+    return character;
+  };
+
+  const randomOption = getRandomOption(optionsArray);
+
+  const character = getRandomCharacter(optionsArray[randomOption]);
 
   // Return our created password
   return password;
