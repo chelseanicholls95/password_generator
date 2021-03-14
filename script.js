@@ -136,7 +136,7 @@ function generatePassword() {
 
   // Validate password length
 
-  if (isValidLength(passwordLengthInput)) {
+  if (isValidLength(passwordLength)) {
     // Continue
   } else {
     alert("Please enter a number between 8 and 128.");
@@ -199,6 +199,15 @@ function generatePassword() {
   }
 
   // Generate password
+
+  // choose a random option from the options array
+  const getRandomOption = function (optionsArray) {
+    const length = optionsArray.length;
+    const randomOption = Math.floor(Math.random() * length);
+    return randomOption;
+  };
+
+  getRandomOption(optionsArray);
 
   // Return our created password
   return password;
