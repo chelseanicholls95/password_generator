@@ -14,37 +14,37 @@ function generatePassword() {
   // Create a variable to store our generated password
   var password = "";
 
-  // Prompt user to insert password length between 8 and 128 characters
+  // Functions
+  const isValidLength = function (number) {
+    return number >= 8 && number <= 128;
+  };
+
+  // Prompt user to insert password length
   const passwordLengthInput = prompt(
     "How many characters would you like the password to be?"
   );
 
-  // Validate length of user input
-  const isValidLength = function (number) {
-    if (number >= 8 && number <= 128) {
-      // Confirm if the user wants lowercase letters
-      const lowerCaseLetters = confirm(
-        "Do you want to include lowercase letters in the password?"
-      );
-      // Confirm if the user wants uppercase letters
-      const upperCaseLetters = confirm(
-        "Do you want to include uppercase letters in the password?"
-      );
-      // Confirm if the user wants special characters
-      const specialCharacters = confirm(
-        "Do you want to include special characters in the password?"
-      );
-      // Confirm if the user wants numbers
-      const numbers = confirm(
-        "Do you want to include numbers in the password?"
-      );
-    } else {
-      alert("Please enter a number between 8 and 128");
-      return;
-    }
-  };
+  // Validate password length
+  if (isValidLength(passwordLengthInput)) {
+  } else {
+    alert("Please enter a number between 8 and 128");
+    return;
+  }
 
-  isValidLength(passwordLengthInput);
+  // Confirm if the user wants lowercase letters
+  const lowerCaseLetters = confirm(
+    "Do you want to include lowercase letters in the password?"
+  );
+  // Confirm if the user wants uppercase letters
+  const upperCaseLetters = confirm(
+    "Do you want to include uppercase letters in the password?"
+  );
+  // Confirm if the user wants special characters
+  const specialCharacters = confirm(
+    "Do you want to include special characters in the password?"
+  );
+  // Confirm if the user wants numbers
+  const numbers = confirm("Do you want to include numbers in the password?");
 
   // Validate that at least one of the above options have been selected
 
