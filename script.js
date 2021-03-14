@@ -20,24 +20,31 @@ function generatePassword() {
   );
 
   // Validate length of user input
+  const isValidLength = function (number) {
+    if (number >= 8 && number <= 128) {
+      // Confirm if the user wants lowercase letters
+      const lowerCaseLetters = confirm(
+        "Do you want to include lowercase letters in the password?"
+      );
+      // Confirm if the user wants uppercase letters
+      const upperCaseLetters = confirm(
+        "Do you want to include uppercase letters in the password?"
+      );
+      // Confirm if the user wants special characters
+      const specialCharacters = confirm(
+        "Do you want to include special characters in the password?"
+      );
+      // Confirm if the user wants numbers
+      const numbers = confirm(
+        "Do you want to include numbers in the password?"
+      );
+    } else {
+      alert("Please enter a number between 8 and 128");
+      return;
+    }
+  };
 
-  // Confirm if the user wants lowercase letters
-  const lowerCaseLetters = confirm(
-    "Do you want to include lowercase letters in the password?"
-  );
-
-  // Confirm if the user wants uppercase letters
-  const upperCaseLetters = confirm(
-    "Do you want to include uppercase letters in the password?"
-  );
-
-  // Confirm if the user wants special characters
-  const specialCharacters = confirm(
-    "Do you want to include special characters in the password?"
-  );
-
-  // Confirm if the user wants numbers
-  const numbers = confirm("Do you want to include numbers in the password?");
+  isValidLength(passwordLengthInput);
 
   // Validate that at least one of the above options have been selected
 
