@@ -23,6 +23,107 @@ function generatePassword() {
     return lowercase || uppercase || special || numbers;
   };
 
+  // Arrays
+  const lowerCaseArray = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+  ];
+
+  const upperCaseArray = [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z",
+  ];
+
+  const specialCharsArray = [
+    " ",
+    "!",
+    "#",
+    "$",
+    "%",
+    "!",
+    "&",
+    ")",
+    "(",
+    "*",
+    "+",
+    "!",
+    ",",
+    "-",
+    ".",
+    "/",
+    ":",
+    ";",
+    "<",
+    "=",
+    ">",
+    "?",
+    "@",
+    "[",
+    "\\",
+    "]",
+    "^",
+    "_",
+    "{",
+    "|",
+    "}",
+    "~",
+    '"',
+    "'",
+    "`",
+  ];
+
+  numbersArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+
+  optionsArray = [];
+
   // Prompt user to insert password length
 
   const passwordLengthInput = prompt(
@@ -32,6 +133,7 @@ function generatePassword() {
   // Validate password length
 
   if (isValidLength(passwordLengthInput)) {
+    // Continue
   } else {
     alert("Please enter a number between 8 and 128.");
     return;
@@ -69,9 +171,27 @@ function generatePassword() {
       numbers
     )
   ) {
+    // Continue
   } else {
     alert("Please choose at least one option.");
+    return;
   }
+
+  // Add selected options to an array 
+  if (lowerCaseLetters) {
+    optionsArray.push("lowerCaseLetters");
+  }
+
+  if (upperCaseLetters) {
+    optionsArray.push("upperCaseLetters");
+  }
+
+  if (specialCharacters) {
+    optionsArray.push("specialCharacters");
+  }
+
+  if (numbers) {
+    optionsArray.push("numbers");
 
   // Generate password
 
