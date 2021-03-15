@@ -12,7 +12,7 @@ function writePassword() {
 // Declare a new function on line 3
 function generatePassword() {
   // Create a variable to store our generated password
-  var password = "";
+  // var password = "";
 
   // Functions
   const isValidLength = function (number) {
@@ -21,6 +21,31 @@ function generatePassword() {
 
   const isValidOption = function (lowercase, uppercase, special, numbers) {
     return lowercase || uppercase || special || numbers;
+  };
+
+  const getRandomOption = function (array) {
+    // check length of array
+    const length = array.length;
+
+    // choose random index from the array
+    const randomOption = Math.floor(Math.random() * length);
+
+    // return the index number
+    return randomOption;
+  };
+
+  const getRandomCharacter = function (array) {
+    // check length of array
+    const length = array.length;
+
+    // choose a random index from that array
+    const randomCharacter = Math.floor(Math.random() * length);
+
+    // access character of that index number
+    const character = array[randomCharacter];
+
+    // return the character
+    return character;
   };
 
   // Arrays
@@ -200,39 +225,14 @@ function generatePassword() {
 
   // Generate password
 
-  // Choose a random option from the options array
+  for (i = 0; i < passwordLength; i++) {
+    // Choose a random option from the options array
+    const randomOption = getRandomOption(optionsArray);
 
-  const getRandomOption = function (array) {
-    // check length of array
-    const length = array.length;
-
-    // choose random index from the array
-    const randomOption = Math.floor(Math.random() * length);
-
-    // return the index number
-    return randomOption;
-  };
-
-  // Choose a random character from the chosen option
-
-  const getRandomCharacter = function (array) {
-    // check length of array
-    const length = array.length;
-
-    // choose a random index from that array
-    const randomCharacter = Math.floor(Math.random() * length);
-
-    // access character of that index number
-    const character = array[randomCharacter];
-
-    // return the character
+    // Choose a random character from the chosen option
+    const character = getRandomCharacter(optionsArray[randomOption]);
     console.log(character);
-    return character;
-  };
-
-  const randomOption = getRandomOption(optionsArray);
-
-  const character = getRandomCharacter(optionsArray[randomOption]);
+  }
 
   // Return our created password
   return password;
